@@ -15,3 +15,7 @@ This is an **experimental** repository to try how Fedora Editions and Spins coul
 # Optional
 € xdg-open img/kickstart-graph.png
 ```
+
+The resulting image looks like:
+
+![Graph of Kickstart includes](img/kickstart-graph.png)
