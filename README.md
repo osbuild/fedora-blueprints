@@ -4,6 +4,8 @@ This is an **experimental** repository to try how Fedora Editions and Spins coul
 
 ## Extras
 
+This repository comes with a bunch of extras to make figuring out the kickstarts, their includes, the package sets, and other things a bit easier for myself. You can find these scripts in `bin/`.
+
 ### Graph Kickstart includes
 
 `bin/ksu.py` offers a way to generate graphviz `.dot` files of the kickstarts and their includes:
