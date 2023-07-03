@@ -1,0 +1,6 @@
+[submodule "ext/pungi-fedora"]
+	path = ext/pungi-fedora
+	url = https://pagure.io/pungi-fedora.git
+[submodule "ext/fedora-kickstarts"]
+	path = ext/fedora-kickstarts
+	url = https://pagure.io/fedora-kickstarts.git
