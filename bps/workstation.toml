@@ -1,6 +1,8 @@
 # An `osbuild-composer` blueprint for the Fedora workstation edition, based on
 # the `ext/fedora-kickstarts/fedora-workstation-base.ks` file.
 
+# These packages are installed upon the 'base' fedora as defined in
+# `osbuild-composer`.
 packages = [
     { name = "@workstation-product-environment" }
 ]
