@@ -8,11 +8,13 @@ packages = [
 ]
 
 # XXX, it'd be nicer if the desktop environment groups put this into an RPM.
+# XXX, this is only applicable to the `live-installer` image type ...
 customizations.files = [
     { path = "/etc/sysconfig/livesys", data = "livesys_session=\"gnome\"" }
 ]
 
 # XXX, it'd be nicer if the desktop environment groups put this into an RPM.
+# XXX, this is only applicable to the `live-installer` image type ...
 customizations.services = {
     enabled = ["livesys", "livesys-late"]    
 }
