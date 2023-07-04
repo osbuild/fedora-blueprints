@@ -9,3 +9,8 @@ packages = [
 customizations.files = [
     { path = "/etc/sysconfig/livesys", data = "livesys_session=\"gnome\"" }
 ]
+
+# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
+customizations.services = {
+    enabled = ["livesys", "livesys-late"]    
+}
