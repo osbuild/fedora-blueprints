@@ -19,9 +19,10 @@ packages = [
 ]
 
 # XXX, it'd be nicer if the desktop environment groups put this into an RPM.
-# XXX, this is only applicable to the `live-installer` image type ...
 customizations.files = [
+    # XXX, this is only applicable to the `live-installer` image type ...
     { path = "/etc/sysconfig/livesys", data = "livesys_session=\"xfce\"" },
+
     { path = "/etc/sysconfig/desktop", data = "PREFERRED=/usr/bin/startxfce4\nDISPLAYMANAGER=/usr/bin/lightdm" }
 ]
 
