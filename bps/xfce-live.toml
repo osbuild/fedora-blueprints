@@ -1,0 +1,30 @@
+# An `osbuild-composer` blueprint for the Fedora XFCE spin, based on
+# the `ext/fedora-kickstarts/fedora-live-xfce.ks` file.
+
+# These packages are installed upon the 'base' fedora as defined in
+# `osbuild-composer`.
+
+# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
+# XXX, for example an fedora-release-xfce-live that can depend on wget/these
+# XXX, the other groups?
+packages = [
+    { name = "fedora-release-xfce" },
+    { name = "@xfce-product-environment" },
+    { name = "@xfce-apps" },
+    { name = "@xfce-extra-plugins" },
+    { name = "@xfce-media" },
+    { name = "@xfce-office" },
+    { name = "wget" },
+    { name = "system-config-printer" },
+]
+
+# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
+# XXX, this is only applicable to the `live-installer` image type ...
+customizations.files = [
+    { path = "/etc/sysconfig/livesys", data = "livesys_session=\"xfce\"" },
+    { path = "/etc/sysconfig/desktop", data = "PREFERRED=/usr/bin/startxfce4\nDISPLAYMANAGER=/usr/bin/lightdm" }
+]
+
+# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
+# XXX, this is only applicable to the `live-installer` image type ...
+customizations.services.enabled = ["livesys", "livesys-late"]
