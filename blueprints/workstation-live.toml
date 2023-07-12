@@ -8,7 +8,10 @@ distro = "fedora-core-39"
 # These packages are installed upon the 'base' fedora as defined in
 # `osbuild-composer`.
 packages = [
+    # Desktop Environment
     { name = "@workstation-product-environment" },
+
+    # Install environment
     { name = "anaconda" },
     { name = "anaconda-install-env-deps" },
     { name = "anaconda-live" },

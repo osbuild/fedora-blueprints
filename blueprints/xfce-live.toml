@@ -12,6 +12,7 @@ distro = "fedora-core-39"
 # XXX, for example an fedora-release-xfce-live that can depend on wget/these
 # XXX, the other groups?
 packages = [
+    # Desktop Environment
     { name = "fedora-release-xfce" },
     { name = "@xfce-desktop-environment" },
     { name = "@xfce-apps" },
@@ -20,6 +21,13 @@ packages = [
     { name = "@xfce-office" },
     { name = "wget" },
     { name = "system-config-printer" },
+
+    # Install Environment
+    { name = "anaconda" },
+    { name = "anaconda-install-env-deps" },
+    { name = "anaconda-live" },
+    { name = "@anaconda-tools" },
+    { name = "glibc-all-langpacks" },
 ]
 
 # XXX, it'd be nicer if the desktop environment groups put this into an RPM.
