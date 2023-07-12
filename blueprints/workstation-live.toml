@@ -8,7 +8,12 @@ distro = "fedora-core-39"
 # These packages are installed upon the 'base' fedora as defined in
 # `osbuild-composer`.
 packages = [
-    { name = "@workstation-product-environment" }
+    { name = "@workstation-product-environment" },
+    { name = "anaconda" },
+    { name = "anaconda-install-env-deps" },
+    { name = "anaconda-live" },
+    { name = "@anaconda-tools" },
+    { name = "glibc-all-langpacks" },
 ]
 
 # XXX, it'd be nicer if the desktop environment groups put this into an RPM.
