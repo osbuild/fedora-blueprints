@@ -13,7 +13,7 @@ distro = "fedora-core-39"
 # XXX, the other groups?
 packages = [
     { name = "fedora-release-xfce" },
-    { name = "@xfce-product-environment" },
+    { name = "@xfce-desktop-environment" },
     { name = "@xfce-apps" },
     { name = "@xfce-extra-plugins" },
     { name = "@xfce-media" },
