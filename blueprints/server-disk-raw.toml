@@ -1,0 +1,31 @@
+name = "fedora-server-disk-raw"
+
+# XXX this is the experimental 'core' distro in osbuild-composer/images
+distro = "fedora-core-39"
+
+# These packages are installed upon the 'base' fedora as defined in
+# `osbuild-composer`.
+packages = [
+    { name = "fedora-release-server" },
+    { name = "@server-product" },
+    { name = "@standard" },
+    { name = "@headless-management" },
+    { name = "@hardware-support" },
+    { name = "@networkmanager-submodules" },
+    { name = "@container-management" },
+    { name = "@domain-client" },
+    { name = "@guest-agents" },
+    { name = "@server-hardware-support" },
+]
+
+# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
+# XXX, this is only applicable to the `live-installer` image type ...
+customizations.services.enabled = ["sshd", "NetworkManager", "chronyd", "initial-setup"]
+
+# XXX we're not doing this bit yet (from kickstart)
+## setup systemd to boot to the right runlevel
+#echo -n "Setting default runlevel to multiuser text mode"
+#rm -f /etc/systemd/system/default.target
+#ln -s /lib/systemd/system/multi-user.target /etc/systemd/system/default.target
+#echo .
+
