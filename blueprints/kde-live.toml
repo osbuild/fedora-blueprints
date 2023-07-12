@@ -1,0 +1,54 @@
+# An `osbuild-composer` blueprint for the Fedora workstation edition, based on
+# the `ext/fedora-kickstarts/fedora-live-workstation.ks` file.
+name = "fedora-kde-live"
+
+# XXX this is the experimental 'core' distro in osbuild-composer/images
+distro = "fedora-core-39"
+
+# These packages are installed upon the 'base' fedora as defined in
+# `osbuild-composer`.
+packages = [
+    # Desktop Environment
+    { name = "@kde-desktop-environment" },
+    { name = "firefox" },
+    { name = "@kde-apps" },
+    { name = "@kde-media" },
+    { name = "@kde-pim" },
+    { name = "@libreoffice" },
+    { name = "libreoffice-draw" },
+    { name = "libreoffice-math" },
+    { name = "fedora-release-kde" },
+    { name = "kde-l10n" },
+    { name = "fuse" },
+    { name = "mediawriter" },
+
+    # Install environment
+    { name = "anaconda" },
+    { name = "anaconda-install-env-deps" },
+    { name = "anaconda-live" },
+    { name = "@anaconda-tools" },
+    { name = "glibc-all-langpacks" },
+]
+
+# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
+customizations.directories = [
+    { path = "/root/.config/gtk-3.0", ensure_parents = true },
+]
+
+customizations.files = [
+    # XXX, this is only applicable to the `live-installer` image type ...
+    { path = "/etc/sysconfig/livesys", data = "livesys_session=\"gnome\"" },
+    { path = "/root/.gtkrc-2.0", data = """\
+include "/usr/share/themes/Adwaita/gtk-2.0/gtkrc"
+include "/etc/gtk-2.0/gtkrc"
+gtk-theme-name="Adwaita"
+"""},
+    { path = "/root/.config/gtk-3.0/settings.ini", data = """\
+[Settings]
+gtk-theme-name = Adwaita
+"""}
+]
+
+# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
+# XXX, this is only applicable to the `live-installer` image type ...
+customizations.services.enabled = ["livesys", "livesys-late"]
