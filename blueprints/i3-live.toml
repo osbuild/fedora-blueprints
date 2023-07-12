@@ -1,6 +1,8 @@
 # An `osbuild-composer` blueprint for the Fedora XFCE spin, based on
 # the `ext/fedora-kickstarts/fedora-live-i3.ks` file.
 
+distro = "fedora-core-39"
+
 # These packages are installed upon the 'base' fedora as defined in
 # `osbuild-composer`.
 
