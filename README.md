@@ -22,6 +22,7 @@ composer-cli compose start blueprint iso-live
 
 - [ ] `sysconfig/livesys` and `sysconfig/desktop` should be configured through a customizations -> https://github.com/osbuild/fedora-blueprints/issues/4
 - [ ] `kde-live.toml` blueprint can't be processed as it needs to create a directory disallowed by policy -> https://github.com/osbuild/fedora-blueprints/issues/2
+- [ ] packages can't be excluded from comps -> https://github.com/osbuild/fedora-blueprints/issues/6
 
 ## Format
 
