@@ -21,7 +21,7 @@ composer-cli compose start blueprint iso-live
 ## Issues
 
 - [ ] `sysconfig/livesys` and `sysconfig/desktop` should be configured through a customizations -> https://github.com/osbuild/fedora-blueprints/issues/4
-- [ ] The `kde-live.toml` blueprint can't be processed as it needs to create a directory disallowed by police: `ERROR: ManifestCreationFailed: failed to initialize osbuild manifest: the following custom directories are not allowed: ["/root/.config/gtk-3.0"]`.
+- [ ] `kde-live.toml` blueprint can't be processed as it needs to create a directory disallowed by policy -> https://github.com/osbuild/fedora-blueprints/issues/2
 
 ## Format
 
