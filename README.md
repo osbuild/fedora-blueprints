@@ -1,6 +1,8 @@
 # fedora-blueprints
 
-This is an **experimental** repository to try how Fedora Editions and Spins could be defined in [osbuild-composer](https://github.com/osbuild/osbuild-composer)'s blueprint format and what problems need to be solved to make this feasible. All these blueprints are still in development and might not yield the same artifacts as current kickstart setups.
+In a [change request for Fedora 39](https://fedoraproject.org/wiki/Changes/FedoraWorkstationImageBuilder) [osbuild-composer](https://github.com/osbuild/osbuild-composer) was considered to build the Fedora Workstation ISO artifacts. The outcome was that `osbuild-composer` needs to provide a way for edition and spin maintainers to define those. We plan to have a new change request for Fedora 40 where we can build a subset of spins and show how other spins and editions could be built as well. We plan to use the time in between those releases to verify the compatibility of the produced artifacts with lorax and livemediacreator.
+
+This is an **experimental** repository to try how Fedora Editions and Spins could be defined in `osbuild-composer`'s blueprint format and what problems need to be solved to make this feasible. All these blueprints are still in development and might not yield the same artifacts as current kickstart setups.
 
 ## Usage
 
@@ -20,6 +22,7 @@ composer-cli compose start blueprint iso-live
 
 ## Issues
 
+- [ ] the dnf state database needs to be populated after installation of packages
 - [ ] `sysconfig/livesys` and `sysconfig/desktop` should be configured through a customizations -> https://github.com/osbuild/fedora-blueprints/issues/4
 - [ ] `kde-live.toml` blueprint can't be processed as it needs to create a directory disallowed by policy -> https://github.com/osbuild/fedora-blueprints/issues/2
 - [ ] packages can't be excluded from comps -> https://github.com/osbuild/fedora-blueprints/issues/6
