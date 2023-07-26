@@ -7,10 +7,6 @@ distro = "fedora-core-39"
 
 # These packages are installed upon the 'base' fedora as defined in
 # `osbuild-composer`.
-
-# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
-# XXX, for example an fedora-release-xfce-live that can depend on wget/these
-# XXX, the other groups?
 packages = [
     # Desktop Environment
     { name = "fedora-release-xfce" },
@@ -30,7 +26,6 @@ packages = [
     { name = "glibc-all-langpacks" },
 ]
 
-# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
 customizations.files = [
     # XXX, this is only applicable to the `live-installer` image type ...
     { path = "/etc/sysconfig/livesys", data = "livesys_session=\"xfce\"" },
@@ -38,6 +33,4 @@ customizations.files = [
     { path = "/etc/sysconfig/desktop", data = "PREFERRED=/usr/bin/startxfce4\nDISPLAYMANAGER=/usr/bin/lightdm" }
 ]
 
-# XXX, it'd be nicer if the desktop environment groups put this into an RPM.
-# XXX, this is only applicable to the `live-installer` image type ...
 customizations.services.enabled = ["livesys", "livesys-late"]
