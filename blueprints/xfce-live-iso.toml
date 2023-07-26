@@ -2,8 +2,8 @@
 # the `ext/fedora-kickstarts/fedora-live-xfce.ks` file.
 name = "fedora-xfce-live-iso"
 
-# XXX this is the experimental 'core' distro in osbuild-composer/images
-distro = "fedora-core-39"
+# XXX this is the experimental 'ng' distro in osbuild-composer/images
+distro = "fedora-ng-39"
 
 # These packages are installed upon the 'base' fedora as defined in
 # `osbuild-composer`.
