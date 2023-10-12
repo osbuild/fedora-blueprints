@@ -1,9 +1,10 @@
 # An `osbuild-composer` blueprint for the Fedora XFCE spin, based on
 # the `ext/fedora-kickstarts/fedora-live-xfce.ks` file.
 name = "fedora-xfce-live-iso"
+description = "Fedora XFCE Live ISO"
 
-# XXX this is the experimental 'ng' distro in osbuild-composer/images
-distro = "fedora-ng-39"
+distro = "fedora-39"
+minimal = true
 
 # These packages are installed upon the 'base' fedora as defined in
 # `osbuild-composer`.

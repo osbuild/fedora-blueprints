@@ -1,9 +1,10 @@
 # An `osbuild-composer` blueprint for the Fedora workstation edition, based on
 # the `ext/fedora-kickstarts/fedora-live-workstation.ks` file.
 name = "fedora-workstation-live-iso"
+description = "Fedora Workstation Live ISO"
 
-# XXX this is the experimental 'ng' distro in osbuild-composer/images
-distro = "fedora-ng-39"
+distro = "fedora-39"
+minimal = true
 
 # These packages are installed upon the 'base' fedora as defined in
 # `osbuild-composer`.
